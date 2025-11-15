@@ -1,10 +1,11 @@
- import {useState} from 'react';
+import 'modern-normalize/modern-normalize.css';
+import { useState } from 'react';
 import css from './App.module.css';
 import CafeInfo from '../CafeInfo/CafeInfo'
- import type {Votes, VoteType} from '../../types/votes.ts'
-import Nofitication from '../Nofitication/Nofitication';
+import type {Votes, VoteType} from '../../types/votes.ts'
+import Notification from '../Notification/Notification.tsx';
 import VoteOptions from '../VoteOptions/VoteOptions'
- import VoteStats from '../VoteStats/VoteStats'
+import VoteStats from '../VoteStats/VoteStats'
 export default function App() {
       const [votes, setVotes] = useState<Votes>({
 	good: 0,
@@ -35,8 +36,7 @@ export default function App() {
                 <VoteStats
                     votes={votes}
                     totalVotes={totalVotes}
-                    positiveRate={positiveRate} /> ) : ( <Nofitication></Nofitication>)}
-            
+                    positiveRate={positiveRate} /> ) : ( <Notification></Notification>)}
         </div>
          
         
